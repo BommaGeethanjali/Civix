@@ -1,33 +1,40 @@
-🚀 CIVIX
-A Digital Civic Engagement Platform
+# 🚀 CIVIX  
+### A Digital Civic Engagement Platform
 
-CIVIX is a web-based platform developed during the Infosys Internship Program, aimed at strengthening communication between citizens and authorities through a transparent and technology-driven approach.
+CIVIX is a web-based application developed as part of the **Infosys Internship Program**.  
+It aims to improve communication between citizens and authorities by providing a transparent and digital platform for reporting civic issues.
 
-🌟 Why CIVIX?
+---
 
-Many civic issues go unnoticed due to lack of proper reporting channels.
-CIVIX solves this problem by providing a centralized digital system where citizens can report issues and authorities can track and manage them efficiently.
+## 🌟 Why CIVIX?
 
-✨ Key Features
+Many civic issues go unnoticed due to the absence of an efficient reporting mechanism.  
+**CIVIX bridges this gap** by enabling citizens to report issues digitally while allowing authorities to track and manage them effectively.
 
-🧑‍🤝‍🧑 Citizen issue reporting system
+---
 
-🔐 Secure authentication & user management
+## ✨ Key Features
 
-📊 Organized data handling through backend services
+- ⚙️ Modular and scalable project architecture  
+- 🧑‍🤝‍🧑 Citizen issue reporting system  
+- 🔐 Secure backend and API integration  
+- 📱 Responsive and user-friendly interface  
+- 📊 Organized data handling and management  
 
-📱 Fully responsive and user-friendly interface
+---
 
-⚙️ Modular and scalable project architecture
+## 🛠️ Technology Stack
 
-🛠️ Technology Stack
-             Layer	                                      Technologies
-            Frontend	                               HTML, CSS, JavaScript
-            Backend	                                   Node.js, Express.js
-            Database	                               MongoDB
-            Version Control	                           Git & GitHub
+- **Frontend:** HTML, CSS, JavaScript  
+- **Backend:** Node.js, Express.js  
+- **Database:** MongoDB  
+- **Version Control:** Git & GitHub  
 
-📂 Project Structure
+---
+
+## 📂 Project Structure
+
+```text
 Civix/
 │
 ├── frontend/        # User Interface
@@ -37,11 +44,12 @@ Civix/
 ├── package.json
 └── README.md
 
+
 ▶️ How to Run Locally
 # Clone the repository
 git clone https://github.com/BommaGeethanjali/Civix.git
 
-# Navigate to project directory
+# Navigate to the project directory
 cd Civix
 
 # Install dependencies
