@@ -6,6 +6,15 @@ It aims to improve communication between citizens and authorities by providing a
 
 ---
 
+## 🔗 Live Demo
+
+🌐 https://civix-platform.vercel.app
+
+📂 GitHub Repository:  
+https://github.com/BommaGeethanjali/Civix
+
+---
+
 ## 🌟 Why CIVIX?
 
 Many civic issues go unnoticed due to the absence of an efficient reporting mechanism.  
@@ -19,60 +28,4 @@ Many civic issues go unnoticed due to the absence of an efficient reporting mech
 - 🧑‍🤝‍🧑 Citizen issue reporting system  
 - 🔐 Secure backend and API integration  
 - 📱 Responsive and user-friendly interface  
-- 📊 Organized data handling and management  
-
----
-
-## 🛠️ Technology Stack
-
-- **Frontend:** HTML, CSS, JavaScript  
-- **Backend:** Node.js, Express.js  
-- **Database:** MongoDB  
-- **Version Control:** Git & GitHub  
-
----
-
-## 📂 Project Structure
-
-```text
-Civix/
-│
-├── frontend/        # User Interface
-├── backend/         # Server-side logic
-├── public/          # Static assets
-├── src/             # Core source files
-├── package.json
-└── README.md
-
-
-▶️ How to Run Locally
-# Clone the repository
-git clone https://github.com/BommaGeethanjali/Civix.git
-
-# Navigate to the project directory
-cd Civix
-
-# Install dependencies
-npm install
-
-# Start the application
-npm start
-
-🎯 Learning Outcomes
-
-Real-world full-stack development experience
-
-Understanding of client–server architecture
-
-Hands-on usage of Git & GitHub collaboration
-
-Improved problem-solving and teamwork skills
-
-👩‍💻 Author
-
-Bomma Geethanjali
-🔗 GitHub: https://github.com/BommaGeethanjali
-
-📜 License
-
-This project is developed for educational and internship purposes.
+- 📊 Organized data handling and management
