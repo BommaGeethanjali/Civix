@@ -9,6 +9,7 @@ const OtpVerification = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const email = location.state?.email;
+  const initialOtp = location.state?.otp;
 
   const [otp, setOtp] = useState(['', '', '', '', '', '']);
   const [error, setError] = useState('');
@@ -21,6 +22,27 @@ const OtpVerification = () => {
       navigate('/signup');
     }
   }, [email, navigate]);
+
+  useEffect(() => {
+    if (initialOtp && initialOtp.length === 6) {
+      setOtp(initialOtp.split(''));
+      toast.info(`Development Mode: Auto-filled simulated OTP (${initialOtp})`, {
+        position: "top-right",
+        autoClose: 8000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        style: {
+          background: "#e0f2fe",
+          color: "#0369a1",
+          fontWeight: "500",
+          borderRadius: "10px",
+          boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+        }
+      });
+    }
+  }, [initialOtp]);
 
   useEffect(() => {
     if (resendTimer > 0) {
@@ -83,10 +105,31 @@ const OtpVerification = () => {
 
     try {
       const response = await resendOTP(email);
-      alert(response.data.message);
+      const newOtp = response.data.otp;
+      
+      if (newOtp && newOtp.length === 6) {
+        setOtp(newOtp.split(''));
+        toast.info(`Development Mode: Auto-filled resent simulated OTP (${newOtp})`, {
+          position: "top-right",
+          autoClose: 8000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          style: {
+            background: "#e0f2fe",
+            color: "#0369a1",
+            fontWeight: "500",
+            borderRadius: "10px",
+            boxShadow: "0 4px 10px rgba(0,0,0,0.1)",
+          }
+        });
+      } else {
+        toast.success(response.data.message || 'OTP resent successfully');
+      }
+      
       setResendTimer(60);
       setCanResend(false);
-      setOtp(['', '', '', '', '', '']);
     } catch (err) {
       setError(err.response?.data?.message || 'Failed to resend OTP');
     } finally {

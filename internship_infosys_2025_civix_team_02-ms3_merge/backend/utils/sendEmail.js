@@ -3,11 +3,17 @@ const nodemailer = require('nodemailer');
 
 const sendEmail = async (email, subject, text) => {
   try {
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      console.warn('EMAIL_USER or EMAIL_PASS not defined in .env. Skipping email send.');
+      console.log(`[SIMULATED EMAIL to ${email}] Subject: ${subject} | Content (OTP): ${text}`);
+      return;
+    }
+
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS.replace(/\s/g, ''), // Remove any spaces from app password
+        pass: process.env.EMAIL_PASS ? process.env.EMAIL_PASS.replace(/\s/g, '') : '', // Remove any spaces from app password
       },
     });
 

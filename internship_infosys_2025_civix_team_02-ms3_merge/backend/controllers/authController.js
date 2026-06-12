@@ -54,10 +54,15 @@ exports.signup = async (req, res) => {
   
     await sendEmail(email, 'Civix - Email Verification', otp);
 
-    res.status(201).json({ 
+    const responseData = { 
       message: 'User registered successfully. Please check your email for OTP.',
       email: email
-    });
+    };
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      responseData.otp = otp;
+    }
+
+    res.status(201).json(responseData);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server error' });
@@ -184,7 +189,12 @@ exports.resendOTP = async (req, res) => {
   
     await sendEmail(email, 'Civix - Email Verification', otp);
 
-    res.status(200).json({ message: 'OTP sent successfully' });
+    const responseData = { message: 'OTP sent successfully' };
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      responseData.otp = otp;
+    }
+
+    res.status(200).json(responseData);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server error' });
@@ -232,7 +242,12 @@ exports.forgotPassword = async (req, res) => {
     // Send OTP email
     await sendEmail(email, 'Civix - Password Reset OTP', otp);
 
-    res.status(200).json({ message: 'OTP sent to your email', email: email });
+    const responseData = { message: 'OTP sent to your email', email: email };
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+      responseData.otp = otp;
+    }
+
+    res.status(200).json(responseData);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Server error' });

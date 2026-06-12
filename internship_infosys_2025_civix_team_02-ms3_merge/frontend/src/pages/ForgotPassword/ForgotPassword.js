@@ -27,7 +27,7 @@ try {
     autoClose: 2000,
   });
   setTimeout(() => {
-    navigate('/reset-password-verify', { state: { email } });
+    navigate('/reset-password-verify', { state: { email, otp: response.data.otp } });
   }, 1500);
 
     } catch (err) {

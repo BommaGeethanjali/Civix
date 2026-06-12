@@ -38,7 +38,7 @@ const Signup = () => {
       const response = await signup(formData);
       toast.success(response.data.message || "Signup successful! Please log in to continue.");
       setTimeout(() => {
-        navigate('/verify-otp', { state: { email: formData.email } });
+        navigate('/verify-otp', { state: { email: formData.email, otp: response.data.otp } });
       }, 1500);
     } catch (err) {
       const errorMsg = err.response?.data?.message || 'Signup failed. Please try again.';
