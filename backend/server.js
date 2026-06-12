@@ -12,7 +12,13 @@ connectDB();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://civix-platform.vercel.app",
+    "http://localhost:3000"
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 
